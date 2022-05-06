@@ -1,0 +1,11 @@
+__pycache__
+
+bbot-venv/
+
+.git
+
+models/blenderbot-400M-distill/README.md
+models/blenderbot-400M-distill/README.md
+
+test-blender-bot-model-at-huggingface.ipybn
+test-blender-bot-model-at-local.ipybn
