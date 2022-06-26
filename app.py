@@ -3,14 +3,17 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from sanic.response import json
 import time
 
-app = Sanic("NMT-Server")
+app = Sanic("BBOT-Server")
 
 @app.before_server_start
 async def load_model(app):
-    global MODEL, TOKENIZER, VI_EN_MODEL, VI_EN_TOKENIZER
-    # Initialize the tokenizer, model for English to Vietnamese Translation
-    TOKENIZER = AutoTokenizer.from_pretrained("models/blenderbot-400M-distill")
-    MODEL = AutoModelForSeq2SeqLM.from_pretrained("models/blenderbot-400M-distill")
+    global MODEL, TOKENIZER
+    # Initialize the tokenizer, model for Blender Bot
+    # TOKENIZER = AutoTokenizer.from_pretrained("models/blenderbot-400M-distill")
+    # MODEL = AutoModelForSeq2SeqLM.from_pretrained("models/blenderbot-400M-distill")
+
+    TOKENIZER = AutoTokenizer.from_pretrained("models/blenderbot_small-90M")
+    MODEL = AutoModelForSeq2SeqLM.from_pretrained("models/blenderbot_small-90M")
 
 @app.route('/open-chat', methods=['POST'])
 async def en_to_vi(request):
