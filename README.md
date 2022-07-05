@@ -15,7 +15,7 @@ To host these sanic services on host machine, execute following command:
   >```
 
 ## III. Docker:
-- docker image: hieuchi911/open-domain-kit:without-ckpts. Only 2 files needed to build this image: dockerfile (at repo [Translate-Service](https://gitlab.com/ct_group1/chatbot/other-services/Translate-Service)) and `requirements.txt`.
+- docker image: hieuchi911/open-domain-kit:without-ckpts. Only 2 files needed to build this image: dockerfile and `requirements.txt` (both at repo [Translate-Service](https://gitlab.com/ct_group1/chatbot/other-services/Translate-Service)). `requirements.txt` in this repo is only used for this bot model, not used for open-domain-kit image.
 - to run docker services for translate service:
   - run the image, binding the container's working directory with directory containing sanic app file (e.g in this repo, `app.py` or `app_opus.py`) and `models/` folder for translate service (similarly for open-domain-chatbot service).
   - run sanic service in the container (either via `CMD` in dockerfile or provide command at `container run`)
